@@ -1,0 +1,9 @@
+/*伪类和伪元素*/
+/*布局在使用 float 的时候，建议使用此css，一般放在common.css中*/
+.clearfix:after {
+    content: '.';
+    visibility: hidden;
+    display: block;
+    clear: both;
+    height: 0;
+}

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>登录页面</title>
+    <script src='{{static_url("jquery-3.1.1.js")}}'></script>
+
+</head>
+<body>
+
+登录页面
+
+<form action="/login" method="post">
+    <input type="text" name="username">
+    <input id="usr" type="password" name="password">
+    <input id="pwd" type="checkbox" name="auto" value="1">7天免登录
+
+    <input type="button" value="登陆" onclick="SubmitForm()">
+
+    <span style="color: red;">{{status_text}}</span>
+</form>
+
+
+<script>
+
+    function SubmitForm() {
+        $.post('/login',{'username':$('#user').val(),'password':$('#pwd').val()},function (callback) {
+            console.log(callback);
+        })
+
+    }
+</script>
+
+</body>
+</html>
